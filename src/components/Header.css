@@ -1,0 +1,70 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.HeaderContainer {
+    background: rgba(0, 11, 24, 0.87);
+    /* background: transparent; */
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+    margin: 2rem;
+    display: flex;
+    padding: 0 1em 0 2em;
+    transition: background-color 0.3s ease;
+}
+
+.HeaderContainer a#MainLink {
+    text-decoration: none;
+    color: #fff;
+}
+
+.HeaderContainer ul {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderContainer ul li {
+    list-style-type: none;
+    font-size: 1.1rem;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.HeaderContainer ul li a:hover {
+    color: #3a6bd0;
+    text-shadow: 0 0 0.5px #3a6bd0;
+}
+
+.HeaderContainer li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    width: 100%;
+    height: 1.7px;
+    background: #3a6bd0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.HeaderContainer li a:hover::after {
+    transform: scaleX(1);
+}

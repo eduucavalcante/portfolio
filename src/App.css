@@ -1,0 +1,14 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+} */
+
+
+.bg-div {
+  background: radial-gradient(ellipse at center, #04083a 0%,#000000 100%,#2989d8 100%,#000000 100%,#2989d8 100%);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -99;
+}

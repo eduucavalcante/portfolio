@@ -1,0 +1,58 @@
+#Home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    gap: 3em;
+    /* background: radial-gradient(ellipse at center, #04083a 0%,#000000 100%,#2989d8 100%,#000000 100%,#2989d8 100%); */
+}
+
+#Home img {
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    border: 3px solid #273445;
+    box-shadow: 0 0 5px #273445;
+    animation: float 5s infinite ease-in-out;
+}
+
+#Home div h2 {
+    font-size: 1.8em;
+}
+
+#Home div h2 span {
+    font-size: 2.1em;
+}
+
+#Home div h2, #Home span, #Home p {
+    font-family: monospace;
+    line-height: 1.2;
+}
+
+#Home p {
+    font-size: 1.7em;
+}
+
+#Home div#social {
+    display: flex;
+    gap: 1em;
+}
+
+#Home div#social svg:hover {
+    cursor: pointer;
+    opacity: 50%;
+}
+
+#Home div#social a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.5em);
+    }
+}
