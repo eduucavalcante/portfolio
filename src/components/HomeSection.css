@@ -33,17 +33,17 @@
     font-size: 1.7em;
 }
 
-#Home div#social {
+div#social {
     display: flex;
     gap: 1em;
 }
 
-#Home div#social svg:hover {
+div#social svg:hover {
     cursor: pointer;
     opacity: 50%;
 }
 
-#Home div#social a {
+div#social a {
     text-decoration: none;
     color: #fff;
 }

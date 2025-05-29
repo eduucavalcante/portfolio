@@ -5,6 +5,7 @@ import HomeSection from './components/HomeSection'
 import AboutSection from './components/AboutSection'
 import ProjectSection from './components/ProjectSection'
 import ContactSection from './components/ContactSection'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       <AboutSection />
       <ProjectSection />
       <ContactSection />
+      <Footer />
     </>
   )
 }

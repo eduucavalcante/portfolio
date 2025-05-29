@@ -96,7 +96,7 @@ form button:active {
     line-height: 2.5em;
     overflow: hidden;
     cursor: pointer;
-    margin: 20px;
+    margin: 20px 0 50px 0;
     font-size: 17px;
     font-weight: 400;
     z-index: 1;
