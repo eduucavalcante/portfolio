@@ -23,5 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-favicon.png
-/src/assets/img/*

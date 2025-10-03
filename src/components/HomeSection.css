@@ -56,3 +56,22 @@ div#social a {
         transform: translateY(-0.5em);
     }
 }
+
+@media (max-width: 768px) {
+    #Home {
+        flex-direction: column;
+        gap: 1.5em;
+        padding: 2em 1em;
+    }
+    #Home img {
+        width: 10em;
+        height: 10em;
+        margin-bottom: 1em;
+    }
+    #Home div {
+        text-align: center;
+    }
+    div#social {
+        justify-content: center;
+    }
+}

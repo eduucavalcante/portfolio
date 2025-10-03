@@ -80,3 +80,16 @@
 .SoftSkills:hover .Skill:hover {
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    .SoftSkills {
+        grid-template-columns: 1fr;
+        gap: 0.7em;
+        justify-items: center;
+    }
+    .Skill {
+        width: 90%;
+        font-size: 1em;
+        padding: 0.5em 0.7em;
+    }
+}

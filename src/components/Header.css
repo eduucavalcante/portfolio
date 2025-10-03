@@ -68,3 +68,21 @@ ul li a {
 .HeaderContainer li a:hover::after {
     transform: scaleX(1);
 }
+
+/* Mobile layout: header responsivo */
+@media (max-width: 768px) {
+    .HeaderContainer {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 0.3em 1.5em 0.3em 2em;
+        justify-content: center;
+        position: relative;
+    }
+    .HeaderContainer ul {
+        gap: 1em;
+    }
+    .HeaderContainer ul li {
+        font-size: 1em;
+    }
+}
