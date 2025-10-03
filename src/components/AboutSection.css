@@ -92,4 +92,17 @@
         font-size: 1em;
         padding: 0.5em 0.7em;
     }
+    /* Centraliza a lista de stacks e ajusta ícones para mobile */
+    .StackList {
+        justify-content: center;
+        gap: 0.8em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .StackIcons {
+        width: 3.2em;
+        height: 3.2em;
+    }
 }
