@@ -13,6 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -22,6 +33,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   /* background: radial-gradient(ellipse at center, #04083a 0%,#000000 100%,#2989d8 100%,#000000 100%,#2989d8 100%); */
+}
+
+body section {
+  animation: appear ease-in-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 @media (prefers-color-scheme: light) {
