@@ -1,4 +1,4 @@
-import profileImg from '../assets/img/profile.JPG';
+import profileImg from '../assets/img/profile.jpg';
 import './HomeSection.css';
 
 function HomeSection() {
