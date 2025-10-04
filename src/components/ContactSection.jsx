@@ -1,15 +1,37 @@
 import './ContactSection.css';
+import { useState } from 'react';
 
 function ContactSection() {
+    const [formData, setFormData] = useState({
+        nome: '',
+        assunto: '',
+        mensagem: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSendEmail = (e) => {
+        e.preventDefault();
+        const email = "eduardo.cavalcante.contact@gmail.com";
+        const subject = `${formData.assunto} - de ${formData.nome}`;
+        const body = `Olá, meu nome é ${formData.nome}.\n\n${formData.mensagem}`;
+
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, "_blank");
+    };
+
     return (
         <section id="Contact">
             <h2>Contato</h2>
             <p>Quer me contratar para um projeto ou saber mais sobre mim? Entre em contato!</p>
             <form id='ContactForm'>
-                <input type="text" name="nome" placeholder="Nome" />
-                <input type="email" name="email" placeholder="Email" />
-                <textarea name="mensagem" placeholder="Mensagem" cols={30} rows={10}></textarea>
-                <button type='submit'>
+                <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} required />
+                <input type="assunto" name="assunto" placeholder="Assunto" value={formData.assunto} onChange={handleChange} required />
+                <textarea name="mensagem" placeholder="Mensagem" cols={30} rows={10} value={formData.mensagem} onChange={handleChange} required></textarea>
+                <button type='submit' onClick={handleSendEmail}>
                     <div class="svg-wrapper-1">
                         <div class="svg-wrapper">
                         <svg
