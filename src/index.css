@@ -16,10 +16,12 @@
 @keyframes appear {
   from {
     opacity: 0;
+    filter: blur(5px);
     scale: 0.5;
   }
   to {
     opacity: 1;
+    filter: blur(0);
     scale: 1;
   }
 }
