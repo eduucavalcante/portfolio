@@ -8,3 +8,4 @@ Este repositório contém o código-fonte do meu primeiro portfólio como desenv
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- Integração com [Google Analytics](https://developers.google.com/analytics)
