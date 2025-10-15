@@ -12,6 +12,7 @@ function AboutSection() {
                 <li><img src="https://skillicons.dev/icons?i=html" alt="HTML" title="HTML" className="StackIcons" /></li>
                 <li><img src="https://skillicons.dev/icons?i=css" alt="CSS" title="CSS" className="StackIcons" /></li>
                 <li><img src="https://skillicons.dev/icons?i=js" alt="JavaScript" title="JavaScript" className="StackIcons" /></li>
+                <li><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" title="TypeScript" className="StackIcons" /></li>
                 <li><img src="https://skillicons.dev/icons?i=git" alt="Git" title="Git" className="StackIcons" /></li>
                 <li><img src="https://skillicons.dev/icons?i=react" alt="React" title="React" className="StackIcons" /></li>
                 <li><img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" title="VSCode" className="StackIcons" /></li>
