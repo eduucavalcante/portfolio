@@ -1,12 +1,16 @@
 import './ContactSection.css';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function ContactSection() {
     const [formData, setFormData] = useState({
         nome: '',
+        email: '',
         assunto: '',
         mensagem: ''
     });
+
+    const [status, setStatus] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -15,12 +19,33 @@ function ContactSection() {
 
     const handleSendEmail = (e) => {
         e.preventDefault();
-        const email = "eduardo.cavalcante.contact@gmail.com";
-        const subject = `${formData.assunto} - de ${formData.nome}`;
-        const body = `Olá, meu nome é ${formData.nome}.\n\n${formData.mensagem}`;
+        setStatus('Enviando...');
 
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.open(mailtoLink, "_blank");
+        emailjs.send(
+            import.meta.env.VITE_SERVICE_ID,
+            import.meta.env.VITE_TEMPLATE_ID,
+            {
+                name: formData.nome,
+                email: formData.email,
+                subject: formData.assunto,
+                message: formData.mensagem,
+                origin: "Formulário de contato do Portfolio",
+                time: new Date().toLocaleString("pt-BR"),
+            },
+            {
+                publicKey: import.meta.env.VITE_PUBLIC_KEY
+            }
+        ).then(() => {
+            setStatus("Mensagem enviada com sucesso!");
+            setFormData({ nome: "", email: "", assunto: "", mensagem: "" })
+
+            setTimeout(() => setStatus(""), 5000);
+        }, (error) => {
+            console.error(error);
+            setStatus("Erro ao enviar mensagem.");
+
+            setTimeout(() => setStatus(""), 5000);
+        });
     };
 
     return (
@@ -29,7 +54,8 @@ function ContactSection() {
             <p>Quer me contratar para um projeto ou saber mais sobre mim? Entre em contato!</p>
             <form id='ContactForm'>
                 <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} required />
-                <input type="assunto" name="assunto" placeholder="Assunto" value={formData.assunto} onChange={handleChange} required />
+                <input type="text" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+                <input type="text" name="assunto" placeholder="Assunto" value={formData.assunto} onChange={handleChange} required />
                 <textarea name="mensagem" placeholder="Mensagem" cols={30} rows={10} value={formData.mensagem} onChange={handleChange} required></textarea>
                 <button type='submit' onClick={handleSendEmail}>
                     <div class="svg-wrapper-1">
@@ -50,6 +76,7 @@ function ContactSection() {
                     </div>
                     <span>Enviar</span>
                 </button>
+                {status && <p className="status">{status}</p>}
             </form>
             <a id='linkedin' href='https://www.linkedin.com/in/eduardo-cavalcante-dev' target='_blank'>Ou fale comigo no LinkedIn
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
